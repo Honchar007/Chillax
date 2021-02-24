@@ -1,2 +1,13 @@
 # Chillax
-App that can connect people via their favours
+App that can connect people via their favours 
+#
+**Functional description:**
+1. Create your own profile
+2. Make private party and invite via links or make public party
+3. History of visited or made party
+4. Chatting 
+5. Watch where and when party will start 
+6. Rate after party
+###
+![](https://media4.giphy.com/media/Thw8mq3PVPKdZRPiye/200.gif)
+![](https://media0.giphy.com/media/wAxlCmeX1ri1y/giphy.gif?cid=63e6b07ehzajigvgxtnsmllmu2o6zowfnwjwe4elola9q2gc&rid=giphy.gif)
