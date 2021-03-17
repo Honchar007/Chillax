@@ -1,15 +1,13 @@
 {
-    "extends": [
-      "react-app",
-      "prettier"
-    ],
+    "extends": ["airbnb", "prettier", "plugin:node/recommended"],
+    "plugins": ["prettier"],
     "rules": {
-      "jsx-quotes": [
-        1,
-        "prefer-double"
-      ]
-    },
-    "plugins": [
-      "prettier"
-    ]
+      "prettier/prettier": "error",
+      "no-unused-vars": "warn",
+      "no-console": "off",
+      "func-names": "off",
+      "no-process-exit": "off",
+      "object-shorthand": "off",
+      "class-methods-use-this": "off"
+    }
   }
