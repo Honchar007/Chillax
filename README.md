@@ -14,7 +14,7 @@ App that can connect people via their favours
 **Component Diagram**
 #
 ![Component Diagram](https://github.com/Honchar007/Chillax/blob/main/errr.png)
-![Component Diagram](https://github.com/Honchar007/Chillax/blob/main/compDiagram.png)
+![Component Diagram](https://github.com/Honchar007/Chillax/blob/main/compDiag.png)
 #
 **ER Diagram**
 #
