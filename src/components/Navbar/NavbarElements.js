@@ -9,6 +9,11 @@ export const Nav = styled.nav`
   justify-content: space-between;
   padding: 0.5rem calc((100vw - 1000px) / 2);
   z-index: 10;
+  img {
+    width: 10rem;
+    height: 10rem;
+    overflow: hidden;
+  }
 `
 
 export const NavLink = styled(Link)`
@@ -57,7 +62,7 @@ export const NavBtn = styled.nav`
 
 export const NavBtnLink = styled(Link)`
   border-radius: 4px;
-  background: #256ce1;
+  background: #000000;
   padding: 10px 22px;
   color: #fff;
   border: none;
@@ -67,8 +72,8 @@ export const NavBtnLink = styled(Link)`
   text-decoration: none;
 
   &:hover {
-    transition: all 0.2s ease-in-out;
-    background: #ffff;
-    color: #010606;
+    box-shadow: 0 0 10px #d80e9c, 0 0 40px #ec21f3, 0 0 80px #2196f3;
+    transition-delay: 0.1s;
+    color: #01afff;
   }
 `

@@ -1,0 +1,6 @@
+.explore{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 88vh;
+}
