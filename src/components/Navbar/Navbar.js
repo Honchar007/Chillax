@@ -21,16 +21,32 @@ const Navbar = () => (
       </NavLink>
       <Bars />
       <NavMenu>
-        <NavLink to="/explore" activeStyle>
+        <NavLink
+          to="/explore"
+          activeStyle={{ borderBottom: 'solid 3px #fff', paddingBottom: '1em' }}
+          exact
+        >
           Explore
         </NavLink>
-        <NavLink to="/messages" activeStyle>
+        <NavLink
+          to="/messages"
+          activeStyle={{ borderBottom: 'solid 3px #fff', paddingBottom: '1em' }}
+          exact
+        >
           Messanger
         </NavLink>
-        <NavLink to="/parties" activeStyle>
+        <NavLink
+          to="/parties"
+          activeStyle={{ borderBottom: 'solid 3px #fff', paddingBottom: '1em' }}
+          exact
+        >
           Patries
         </NavLink>
-        <NavLink to="/profile" activeStyle>
+        <NavLink
+          to="/profile"
+          activeStyle={{ borderBottom: 'solid 3px #fff', paddingBottom: '1em' }}
+          exact
+        >
           Profile
         </NavLink>
       </NavMenu>
