@@ -7,6 +7,7 @@ import Explore from './components/pages/exploration'
 import Messanger from './components/pages/messanger'
 import Profile from './components/pages/profile'
 import Party from './components/pages/parties'
+import Login from './components/pages/login'
 
 //  Styles
 import './components/styles/App.css'
@@ -21,6 +22,7 @@ function App() {
         <Route path="/explore" exact component={Explore} />
         <Route path="/parties" exact component={Party} />
         <Route path="/profile" exact component={Profile} />
+        <Route path="/signin" exact component={Login} />
       </Switch>
     </Router>
   )
