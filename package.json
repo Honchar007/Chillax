@@ -1,21 +1,27 @@
 {
-  "name": "chillax",
-  "version": "0.1.0",
-  "private": true,
+  "name": "Chillax",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Honchar007/Chillax.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Honchar007/Chillax/issues"
+  },
+  "homepage": "https://github.com/Honchar007/Chillax#readme",
   "dependencies": {
-    "next": "10.1.3",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
-    "react-icons": "^4.2.0",
-    "react-router-dom": "^5.2.0",
-    "styled-components": "^5.2.3"
-  },
-  "devDependencies": {
-    "babel-plugin-styled-components": "^1.12.0"
+    "axios": "^0.21.1",
+    "concurrently": "^6.0.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.12.3",
+    "nodemon": "^2.0.7"
   }
 }
