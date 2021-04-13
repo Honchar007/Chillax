@@ -211,7 +211,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_styles_registration_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../components/styles/registration.css */ "./components/styles/registration.css");
 /* harmony import */ var _components_styles_registration_css__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_components_styles_registration_css__WEBPACK_IMPORTED_MODULE_9__);
 
-var _jsxFileName = "D:\\Projects\\Chillax\\pages\\_app.js";
+var _jsxFileName = "D:\\Projects\\Chillax\\client\\pages\\_app.js";
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 

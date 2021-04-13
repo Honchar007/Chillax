@@ -134,7 +134,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _NavbarElements__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./NavbarElements */ "./components/Navbar/NavbarElements.js");
 
-var _jsxFileName = "D:\\Projects\\Chillax\\components\\Navbar\\Navbar.js";
+var _jsxFileName = "D:\\Projects\\Chillax\\client\\components\\Navbar\\Navbar.js";
 //  Imports
 
 
@@ -3205,7 +3205,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Navbar_Navbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Navbar/Navbar */ "./components/Navbar/Navbar.js");
 
 
-var _jsxFileName = "D:\\Projects\\Chillax\\pages\\exploration.js";
+var _jsxFileName = "D:\\Projects\\Chillax\\client\\pages\\exploration.js";
 
 
 
@@ -3250,7 +3250,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Navbar_Navbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Navbar/Navbar */ "./components/Navbar/Navbar.js");
 
 
-var _jsxFileName = "D:\\Projects\\Chillax\\pages\\home.js";
+var _jsxFileName = "D:\\Projects\\Chillax\\client\\pages\\home.js";
 
 
 
@@ -3311,7 +3311,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_9__);
 
 
-var _jsxFileName = "D:\\Projects\\Chillax\\pages\\index.js";
+var _jsxFileName = "D:\\Projects\\Chillax\\client\\pages\\index.js";
 //  Import
 
 
@@ -3365,7 +3365,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Navbar_Navbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Navbar/Navbar */ "./components/Navbar/Navbar.js");
 
 
-var _jsxFileName = "D:\\Projects\\Chillax\\pages\\messanger.js";
+var _jsxFileName = "D:\\Projects\\Chillax\\client\\pages\\messanger.js";
 
 
 
@@ -3410,7 +3410,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Navbar_Navbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Navbar/Navbar */ "./components/Navbar/Navbar.js");
 
 
-var _jsxFileName = "D:\\Projects\\Chillax\\pages\\parties.js";
+var _jsxFileName = "D:\\Projects\\Chillax\\client\\pages\\parties.js";
 
 
 
@@ -3455,7 +3455,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_Navbar_Navbar__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../components/Navbar/Navbar */ "./components/Navbar/Navbar.js");
 
 
-var _jsxFileName = "D:\\Projects\\Chillax\\pages\\profile.js";
+var _jsxFileName = "D:\\Projects\\Chillax\\client\\pages\\profile.js";
 
 
 
