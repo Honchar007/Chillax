@@ -7,6 +7,7 @@ import '../components/styles/profile.css'
 import '../components/styles/Home.css'
 import '../components/styles/login.css'
 import '../components/styles/registration.css'
+import '../components/styles/createParty.css'
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />

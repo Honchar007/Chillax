@@ -17,4 +17,13 @@ router.post('/add', async (req, res) => {
   }
 })
 
+router.get('/', async (req, res) => {
+  try {
+    const posts = await Post.find()
+    res.json(posts)
+  } catch (error) {
+    console.log(error)
+  }
+})
+
 module.exports = router

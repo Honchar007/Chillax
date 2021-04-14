@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "client": "npm run dev --prefix client",
-    "server":"nodemon index.js",
-    "dev":"concurrently \"npm run server\" \"npm run client\" ",
+    "server": "nodemon index.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\" ",
     "testOwn": "echo 'No Tests'",
     "precommit": "lint-staged",
     "eslint": "node_modules/.bin/eslint src/",
@@ -28,9 +28,12 @@
   "dependencies": {
     "axios": "^0.21.1",
     "concurrently": "^6.0.1",
+    "cors": "^2.8.5",
     "express": "^4.17.1",
+    "materialize-css": "^1.0.0-rc.2",
     "mongoose": "^5.12.3",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "react-materialize": "^3.9.8"
   },
   "lint-staged": {
     "*.{js, jsx}": [
