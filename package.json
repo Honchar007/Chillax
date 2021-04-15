@@ -26,14 +26,13 @@
   },
   "homepage": "https://github.com/Honchar007/Chillax#readme",
   "dependencies": {
-    "@material-ui/core": "^4.11.3",
     "axios": "^0.21.1",
     "concurrently": "^6.0.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "mongoose": "^5.12.3",
     "nodemon": "^2.0.7",
-    "react-materialize": "^3.9.8"
+    "react": "^17.0.2"
   },
   "lint-staged": {
     "*.{js, jsx}": [

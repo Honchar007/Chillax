@@ -2,12 +2,31 @@ import React from 'react'
 import Navbar from '../components/Navbar/Navbar'
 import CardParty from '../components/CardParty'
 import styled from 'styled-components'
+import Button from '@material-ui/core/Button'
+import Grid from '@material-ui/core/Grid'
+import Card from '@material-ui/core/Card'
+import CardActionArea from '@material-ui/core/CardActionArea'
+import CardMedia from '@material-ui/core/CardMedia'
+import CardContent from '@material-ui/core/CardContent'
+import Typography from '@material-ui/core/Typography'
+import CardActions from '@material-ui/core/CardActions'
 
 const PartyWrapper = styled.div`
   align-items: center;
   justify-content: center;
   display: flex;
 `
+const CardPart = styled(Card)`
+  max-width: 345px;
+  min-width: 345px;
+  &:hover {
+    box-shadow: 0px 3px 15px #e917de;
+  }
+`
+
+const cutHandler = (text) => {
+  if (text.length > 100) return text.substring(0, 100) + '...'
+}
 
 const Parties = ({ posts }) => {
   if (!posts) 'Loading...'
@@ -16,45 +35,50 @@ const Parties = ({ posts }) => {
     <>
       <Navbar />
       <PartyWrapper>
-        {posts.map((post, idx) => {
-          console.log(post)
-          return (
-            <CardParty
-              imageUrl={post.imgUrl}
-              title={post.title}
-              text={post.text}
-              key={idx}
-            />
-          )
-        })}
+        <Grid
+          container
+          style={{ justifyContent: 'center', marginTop: 10 }}
+          spacing={3}
+        >
+          {posts.map((post, idx) => {
+            return (
+              <Grid item key={idx}>
+                <CardPart>
+                  <CardActionArea>
+                    <CardMedia
+                      component="img"
+                      alt={post.title}
+                      height="140"
+                      image={post.imgUrl}
+                      title={post.title}
+                    />
+                    <CardContent>
+                      <Typography gutterBottom variant="h5" component="h2">
+                        {post.title}
+                      </Typography>
+                      <Typography
+                        variant="body2"
+                        color="textSecondary"
+                        component="p"
+                      >
+                        {cutHandler(post.text)}
+                      </Typography>
+                    </CardContent>
+                  </CardActionArea>
+                  <CardActions>
+                    <Button size="small" color="primary">
+                      Share
+                    </Button>
+                    <Button size="small" color="primary">
+                      Learn More
+                    </Button>
+                  </CardActions>
+                </CardPart>
+              </Grid>
+            )
+          })}
+        </Grid>
       </PartyWrapper>
-      <div class="row">
-        <div class="col s12 m7">
-          <div class="card">
-            <div class="card-image">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Jack-o%27-Lantern_2003-10-31.jpg/360px-Jack-o%27-Lantern_2003-10-31.jpg" />
-              <span class="card-title">Card Title</span>
-            </div>
-            <div class="card-content">
-              <p>
-                I am a very simple card. I am good at containing small bits of
-                information. I am convenient because I require little markup to
-                use effectively.
-              </p>
-            </div>
-            <div class="card-action">
-              <a href="#">This is a link</a>
-            </div>
-          </div>
-        </div>
-      </div>
-      <CardParty
-        imageUrl="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Jack-o%27-Lantern_2003-10-31.jpg/360px-Jack-o%27-Lantern_2003-10-31.jpg"
-        title="Halloween"
-        text="
-        Halloween or Halloween (a contraction of All Hallows evening),[5] also known as Allhalloween,[6] All Hallows Eve,[7] or All Saints Eve,[8] is a celebration observed in many countries on 31 October , the eve of the Western Christian feast of All Hallows Day. It begins the observance of Allhallowtide,[9] the time in the liturgical year dedicated to remembering the dead, including saints (hallows), martyrs, and all the faithful departed."
-      />
-      <div className="parties"></div>
     </>
   )
 }
