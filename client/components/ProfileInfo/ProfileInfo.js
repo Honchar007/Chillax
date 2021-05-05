@@ -1,7 +1,11 @@
 import React, { Component } from 'react'
 import { Typography } from '@material-ui/core'
-export class ProfileInfo extends Component {
-  render() {
+import { getSession } from 'next-auth/client'
+import { useSession } from 'next-auth/client'
+
+export default function ProfileInfo(){
+const [session, loading] = useSession()
+  
     return (
       <div className="profile container_shadow">
         <div className="profile_name">
@@ -18,7 +22,7 @@ export class ProfileInfo extends Component {
         </div>
       </div>
     )
-  }
+
 }
 
 export default ProfileInfo

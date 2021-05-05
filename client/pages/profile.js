@@ -3,13 +3,9 @@ import Navbar from '../components/Navbar/Navbar'
 import { Container, Grid, Avatar, Typography } from '@material-ui/core'
 import styled from 'styled-components'
 import ProfileInfo from '../components/ProfileInfo/ProfileInfo'
-import { getSession } from 'next-auth/client'
 
 class Profile extends React.Component {
-session = await getSession({req});
-  
   render() {
-
     return (
       <>
         <Navbar />
