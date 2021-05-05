@@ -5,12 +5,14 @@ import Link from 'next/link'
 import styled from 'styled-components'
 import axios from 'axios'
 import useRouter from 'next/router'
-
+import { Checkbox } from '@material-ui/core'
+import PhoneInput from 'react-phone-number-input'
 const Wrapper = styled.div`
   margin-top: 20px;
-  background: #140c0c;
+  background: #140c13;
   min-height: 100vh;
   width: 100%;
+  color: #ffffff;
 `
 const BackBtn = styled.a``
 const FormWrapper = styled.div`
@@ -19,7 +21,7 @@ const FormWrapper = styled.div`
   align-items: center;
 `
 const Form = styled.form`
-  background: linear-gradient(#1aece2, #000d1a);
+  background: linear-gradient(#1aece2, #245cf3);
 
   border-radius: 15px;
   padding: 30px;
@@ -49,18 +51,20 @@ const TextLabel = styled.div`
   font-weight: 300;
   font-size: 18px;
   line-height: 21px;
-  color: #222222;
+  color: #ffffff;
   margin-bottom: 5px;
 `
 const TextArea = styled.textarea`
   width: 100%;
   display: flex;
-  border: 1px solid black;
+  border: 1px solid #ffffff;
   box-sizing: border-box;
   border-radius: 5px;
   margin-bottom: 10px;
   outline: none;
   padding: 5px 10px;
+  color: #ffffff;
+
   min-height: 150px;
   resize: none;
   background: transparent;
@@ -91,6 +95,8 @@ const InputStyled = styled.input`
   display: block;
   width: 300px;
   border: none;
+  color: #ffffff;
+
   border-bottom: 1px solid #000000;
   background: transparent;
   &:focus {
@@ -99,7 +105,7 @@ const InputStyled = styled.input`
 `
 
 const LabelStyled = styled.label`
-  color: #999;
+  color: #ffffff;
   font-size: 18px;
   font-weight: normal;
   position: absolute;
@@ -117,19 +123,24 @@ const LabelStyled = styled.label`
     border: none;
   }
 `
-const addPost = async () => {
+/*const addPost = async () => {
   console.log(title)
 
   try {
     await axios.post('http://localhost:5000/api/post/add', {
       title,
+      city,
       text,
       imgUrl,
+      bees,
+      street,
+      numberHouse,
+      phone,
     })
   } catch (error) {
     console.log(error)
   }
-}
+}*/
 const Bar = styled.span`
   position: relative;
   display: block;
@@ -179,6 +190,13 @@ const CreateParty = () => {
   const [title, setTitle] = useState('')
   const [text, setText] = React.useState('')
   const [imgUrl, setImgUrl] = React.useState('')
+  const [city, setCity] = React.useState('')
+  const [bees, setBees] = React.useState(false)
+
+  const [street, setStreet] = React.useState('')
+  const [numberHouse, setNumberHouse] = React.useState('')
+  const [phone, setPhone] = React.useState('')
+
   const router = useRouter
 
   const addPost = async () => {
@@ -186,8 +204,13 @@ const CreateParty = () => {
       await axios
         .post('http://localhost:5000/api/post/add', {
           title,
+          city,
           text,
           imgUrl,
+          bees,
+          street,
+          numberHouse,
+          phone,
         })
         .then(() => router.push('/'))
     } catch (error) {
@@ -203,18 +226,11 @@ const CreateParty = () => {
       <Wrapper>
         <FormWrapper>
           <Form onSubmit={(e) => e.preventDefault()}>
-            <InputWrapper>
-              <InputStyled type="text" required></InputStyled>
-              <Highlight></Highlight>
-              <Bar></Bar>
-              <LabelStyled> Name</LabelStyled>
-            </InputWrapper>
             <InputField>
               <InputWrapper>
                 <InputStyled
                   onChange={(e) => {
                     setTitle(e.target.value)
-                    console.log(title)
                   }}
                   type="text"
                   required
@@ -223,11 +239,70 @@ const CreateParty = () => {
                 <Bar></Bar>
                 <LabelStyled> Name of your party</LabelStyled>
               </InputWrapper>
+              <InputWrapper>
+                <Checkbox
+                  color="primary"
+                  onChange={(e) => {
+                    setBees(e.target.checked)
+                  }}
+                ></Checkbox>
+                Only newbies
+              </InputWrapper>
+              <InputWrapper>
+                <InputStyled
+                  onChange={(e) => {
+                    setCity(e.target.value)
+                  }}
+                  type="text"
+                  required
+                ></InputStyled>
+                <Highlight></Highlight>
+                <Bar></Bar>
+                <LabelStyled> City </LabelStyled>
+              </InputWrapper>
+              <InputWrapper>
+                <InputStyled
+                  onChange={(e) => {
+                    setStreet(e.target.value)
+                  }}
+                  type="text"
+                  required
+                ></InputStyled>
+                <Highlight></Highlight>
+                <Bar></Bar>
+                <LabelStyled> Street </LabelStyled>
+              </InputWrapper>
+              <InputWrapper>
+                <InputStyled
+                  onChange={(e) => {
+                    setNumberHouse(e.target.value)
+                  }}
+                  type="text"
+                  required
+                ></InputStyled>
+                <Highlight></Highlight>
+                <Bar></Bar>
+                <LabelStyled> Home </LabelStyled>
+              </InputWrapper>
+
+              <InputWrapper>
+                <InputStyled
+                  onChange={(e) => {
+                    setPhone(e.target.value)
+                  }}
+                  type="text"
+                  required
+                ></InputStyled>
+                <Highlight></Highlight>
+                <Bar></Bar>
+                <LabelStyled> Phone </LabelStyled>
+              </InputWrapper>
             </InputField>
             <InputField>
               <TextLabel>Some Description</TextLabel>
               <TextArea onChange={(e) => setText(e.target.value)}></TextArea>
             </InputField>
+
             <InputField>
               <InputWrapper>
                 <InputStyled

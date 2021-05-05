@@ -8,9 +8,16 @@ import '../components/styles/Home.css'
 import '../components/styles/login.css'
 import '../components/styles/registration.css'
 import '../components/styles/createParty.css'
+import { Provider } from 'next-auth/client'
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+  return (
+    <Component {...pageProps}>
+      <Provider session={pageProps.session}>
+        <Component />
+      </Provider>
+    </Component>
+  )
 }
 
 export default MyApp
