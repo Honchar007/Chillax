@@ -10,6 +10,7 @@ import CardMedia from '@material-ui/core/CardMedia'
 import CardContent from '@material-ui/core/CardContent'
 import Typography from '@material-ui/core/Typography'
 import CardActions from '@material-ui/core/CardActions'
+import Link from 'next/link'
 
 const PartyWrapper = styled.div`
   align-items: center;
@@ -43,37 +44,39 @@ const Parties = ({ posts }) => {
           {posts.map((post, idx) => {
             return (
               <Grid item key={idx}>
-                <CardPart>
-                  <CardActionArea>
-                    <CardMedia
-                      component="img"
-                      alt={post.title}
-                      height="140"
-                      image={post.imgUrl}
-                      title={post.title}
-                    />
-                    <CardContent>
-                      <Typography gutterBottom variant="h5" component="h2">
-                        {post.title}
-                      </Typography>
-                      <Typography
-                        variant="body2"
-                        color="textSecondary"
-                        component="p"
-                      >
-                        {cutHandler(post.text)}
-                      </Typography>
-                    </CardContent>
-                  </CardActionArea>
-                  <CardActions>
-                    <Button size="small" color="primary">
-                      Share
-                    </Button>
-                    <Button size="small" color="primary">
-                      Learn More
-                    </Button>
-                  </CardActions>
-                </CardPart>
+                <Link href={`party/[id]`} as={`/party/${post._id}`} passHref>
+                  <CardPart>
+                    <CardActionArea>
+                      <CardMedia
+                        component="img"
+                        alt={post.title}
+                        height="140"
+                        image={post.imgUrl}
+                        title={post.title}
+                      />
+                      <CardContent>
+                        <Typography gutterBottom variant="h5" component="h2">
+                          {post.title}
+                        </Typography>
+                        <Typography
+                          variant="body2"
+                          color="textSecondary"
+                          component="p"
+                        >
+                          {cutHandler(post.text)}
+                        </Typography>
+                      </CardContent>
+                    </CardActionArea>
+                    <CardActions>
+                      <Button size="small" color="primary">
+                        Share
+                      </Button>
+                      <Button size="small" color="primary">
+                        Learn More
+                      </Button>
+                    </CardActions>
+                  </CardPart>
+                </Link>
               </Grid>
             )
           })}

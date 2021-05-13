@@ -65,7 +65,7 @@ class Navbar extends React.Component {
               Patries
             </NavLink>
           </Link>
-          <Link href="/profile" passHref>
+          <Link href={'/profile'} passHref>
             <NavLink
               activeStyle={{
                 borderBottom: 'solid 3px #fff',

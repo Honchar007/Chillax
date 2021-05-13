@@ -1,6 +1,7 @@
 const { Router } = require('express')
 const router = Router()
 const Post = require('../models/Post')
+const User = require('../models/Users')
 
 router.post('/add', async (req, res) => {
   try {
@@ -31,7 +32,53 @@ router.post('/add', async (req, res) => {
   }
 })
 
+router.post('/add/user', async (req, res) => {
+  try {
+    const {
+      nickName,
+      email,
+      instagram,
+      github,
+      telegram,
+      photo,
+      normalLevel,
+    } = req.body
+    const user = new Users({
+      nickName,
+      email,
+      instagram,
+      github,
+      telegram,
+      photo,
+      normalLevel,
+    })
+    await user.save()
+    res.json(user)
+  } catch (error) {
+    console.log(error)
+  }
+})
+
 router.get('/', async (req, res) => {
+  try {
+    const posts = await Post.find()
+    res.json(posts)
+  } catch (error) {
+    console.log(error)
+  }
+})
+
+router.get('/:id', async (req, res) => {
+  try {
+    const { id } = req.params
+    const post = await Post.findById(id)
+    res.json(post)
+  } catch (error) {
+    console.log(error)
+  }
+})
+
+router.get('/ownparties', async (req, res) => {
   try {
     const posts = await Post.find()
     res.json(posts)

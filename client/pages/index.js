@@ -26,12 +26,10 @@ class Index extends React.Component {
         </Head>
         <Navbar />
         <div className="main">
-          {this.state?.session.user.name != '' && (
+          {this.state?.session != null && (
             <div>You are logged in! Hello, {this.state?.session.user.name}</div>
           )}
-          {this.state?.session.user.name == '' && (
-            <div>You are not logged in</div>
-          )}
+          {!this.state?.session == null && <div>You are not logged in</div>}
 
           <h1>Home</h1>
           <img
