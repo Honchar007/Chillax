@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Typography } from '@material-ui/core'
-import { signIn, signOut, useSession, getSession } from 'next-auth/client'
+import { useSession, getSession } from 'next-auth/client'
 import styled from 'styled-components'
 import CustomTimeLine from '../CustomTimeLine'
 
@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   margin-top: 20px;
   background: white;
   border-radius: 6px;
-  width: 200px;
+
   height: 100%;
   text-align: center;
   background-color: #c300ff;
@@ -76,15 +76,23 @@ export class ProfileInfo extends Component {
       <Wrapper>
         <div>
           <ProfileName className="profile_name">
-            <TypographyName className="name">Sam </TypographyName>
-            <TypographyTitle className="title">Sam</TypographyTitle>
+            <TypographyName className="name">
+              {this.props.userInfo[0].nickName}
+            </TypographyName>
+            <TypographyTitle className="title">
+              {this.props.userInfo[0].github}
+            </TypographyTitle>
           </ProfileName>
 
           <ProfileImage className="profile_image">
-            <img src={img} alt="" />
+            <img src={this.props.userInfo[0].photo} alt="" />
           </ProfileImage>
         </div>
-        <CustomTimeLine></CustomTimeLine>
+        <CustomTimeLine
+          github={this.props.userInfo[0].github}
+          instagram={this.props.userInfo[0].instagram}
+          telegram={this.props.userInfo[0].telegram}
+        ></CustomTimeLine>
         <FormBtn>Send Message</FormBtn>
 
         <Split></Split>

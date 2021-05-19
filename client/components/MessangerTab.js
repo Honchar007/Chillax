@@ -51,7 +51,6 @@ export class MessangerTab extends Component {
 
     return (
       <>
-        TESTED TESTED TESTED {this.props.name}
         {this.props.name != null ? (
           <div>
             <button onClick={() => this.onButtonClicked('Hello')}>
@@ -81,13 +80,12 @@ export class MessangerTab extends Component {
                   <Meta
                     avatar={
                       <Avatar
+                        src={this.state.img}
                         style={{
                           color: '#f56a00',
                           backgroundColor: 'red',
                         }}
-                      >
-                        <img src={this.state.img} alt="" />
-                      </Avatar>
+                      ></Avatar>
                     }
                     title={message.user + ':'}
                     description={message.msg}

@@ -77,7 +77,7 @@ function Post({ post }) {
             <div>{post.text}</div>
 
             <FormBtn color="inherit" href="/profile" passHref>
-              Owner : Andrey
+              Owner : {post.creator}
             </FormBtn>
             <Visitors max={4}>
               <Avatar
@@ -111,6 +111,7 @@ function Post({ post }) {
 export default Post
 
 export async function getServerSideProps(context) {
+  console.log(context)
   const res = await fetch(`http://localhost:5000/api/post/${context.query.id}`)
   const post = await res.json()
 

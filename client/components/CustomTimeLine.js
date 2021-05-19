@@ -12,24 +12,30 @@ export class CustomTimeLine extends Component {
     return (
       <Timeline>
         <TimelineItem>
+          <TimelineContent>Inst</TimelineContent>
+
           <TimelineSeparator>
             <TimelineDot />
             <TimelineConnector />
           </TimelineSeparator>
-          <TimelineContent>Eat</TimelineContent>
+          <TimelineContent>{this.props.instagram}</TimelineContent>
         </TimelineItem>
         <TimelineItem>
+          <TimelineContent>Tg</TimelineContent>
+
           <TimelineSeparator>
             <TimelineDot />
             <TimelineConnector />
           </TimelineSeparator>
-          <TimelineContent>Code</TimelineContent>
+          <TimelineContent>{this.props.telegram}</TimelineContent>
         </TimelineItem>
         <TimelineItem>
+          <TimelineContent>Git</TimelineContent>
+
           <TimelineSeparator>
             <TimelineDot />
           </TimelineSeparator>
-          <TimelineContent>Sleep</TimelineContent>
+          <TimelineContent>{this.props.github}</TimelineContent>
         </TimelineItem>
       </Timeline>
     )
