@@ -11,10 +11,10 @@ const Profile = ({ posts, user }) => {
       <Navbar />
       <Container>
         <Grid container>
-          <Grid item lg={5} md={5} sm={4} xs={4}>
+          <Grid item lg={4} md={4} sm={6} xs={10}>
             <ProfileInfo userInfo={user} />
           </Grid>
-          <Grid item xs={8}>
+          <Grid item lg={6} md={6} sm={6} xs={10}>
             <PartyMaker posts={posts} />
           </Grid>
         </Grid>

@@ -12,8 +12,6 @@ export class CustomTimeLine extends Component {
     return (
       <Timeline>
         <TimelineItem>
-          <TimelineContent>Inst</TimelineContent>
-
           <TimelineSeparator>
             <TimelineDot />
             <TimelineConnector />
@@ -21,8 +19,6 @@ export class CustomTimeLine extends Component {
           <TimelineContent>{this.props.instagram}</TimelineContent>
         </TimelineItem>
         <TimelineItem>
-          <TimelineContent>Tg</TimelineContent>
-
           <TimelineSeparator>
             <TimelineDot />
             <TimelineConnector />
@@ -30,8 +26,6 @@ export class CustomTimeLine extends Component {
           <TimelineContent>{this.props.telegram}</TimelineContent>
         </TimelineItem>
         <TimelineItem>
-          <TimelineContent>Git</TimelineContent>
-
           <TimelineSeparator>
             <TimelineDot />
           </TimelineSeparator>
