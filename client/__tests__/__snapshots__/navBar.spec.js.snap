@@ -1,0 +1,85 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<nav
+  className="NavbarElements__Nav-a01551-0 lkDVfj"
+>
+  <a
+    className="NavbarElements__NavLink-a01551-1 gpZxDE"
+    href="/home"
+    onClick={[Function]}
+    onMouseEnter={[Function]}
+  >
+    <img
+      alt="logo"
+      className="logo"
+      src="https://api.freelogodesign.org/files/34eb4009482b4c919fdfaf4f64249cd9/thumb/logo_200x200.png?v=637534660950000000"
+    />
+  </a>
+  <svg
+    className="NavbarElements__Bars-a01551-2 iTVcVw"
+    fill="currentColor"
+    height="1em"
+    stroke="currentColor"
+    strokeWidth="0"
+    style={
+      Object {
+        "color": undefined,
+      }
+    }
+    viewBox="0 0 448 512"
+    width="1em"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"
+    />
+  </svg>
+  <div
+    className="NavbarElements__NavMenu-a01551-3 ikoczi"
+  >
+    <a
+      className="NavbarElements__NavLink-a01551-1 gpZxDE"
+      href="/exploration"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      Explore
+    </a>
+    <a
+      className="NavbarElements__NavLink-a01551-1 gpZxDE"
+      href="/messanger"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      Messanger
+    </a>
+    <a
+      className="NavbarElements__NavLink-a01551-1 gpZxDE"
+      href="/parties"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      Patries
+    </a>
+    <a
+      className="NavbarElements__NavLink-a01551-1 gpZxDE"
+      href="/profile/undefined"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      Profile
+    </a>
+  </div>
+  <nav
+    className="NavbarElements__NavBtn-a01551-4 lnVSXP"
+    onClick={[Function]}
+  >
+    <a
+      className="NavbarElements__NavBtnLink-a01551-5 cTIYEl"
+    >
+      Sign in
+    </a>
+  </nav>
+</nav>
+`;
