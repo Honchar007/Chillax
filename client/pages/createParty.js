@@ -5,7 +5,7 @@ import Link from 'next/link'
 import styled from 'styled-components'
 import axios from 'axios'
 import useRouter from 'next/router'
-import { Checkbox } from '@material-ui/core'
+import Checkbox from '@material-ui/core/Checkbox'
 import PhoneInput from 'react-phone-number-input'
 const Wrapper = styled.div`
   margin-top: 20px;
@@ -220,7 +220,7 @@ const CreateParty = () => {
   return (
     <>
       <Head>
-        <title>Chillax:Login</title>
+        <title>Chillax:Create Party</title>
       </Head>
       <Navbar></Navbar>
       <Wrapper>
@@ -241,7 +241,6 @@ const CreateParty = () => {
               </InputWrapper>
               <InputWrapper>
                 <Checkbox
-                  color="primary"
                   onChange={(e) => {
                     setBees(e.target.checked)
                   }}

@@ -45,10 +45,10 @@ export class PartyMaker extends Component {
           spacing={3}
         >
           {this.props.posts.map((post, idx) => {
-            if (post.creator == this.state?.session.user.name)
+            if (post.creator == this.props.userName)
               return (
                 <Grid item key={idx}>
-                  <Link href={`party/[id]`} as={`/party/${post._id}`} passHref>
+                  <Link href={`/party/[id]`} as={`/party/${post._id}`} passHref>
                     <CardPart>
                       <CardActionArea>
                         <CardMedia

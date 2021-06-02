@@ -9,6 +9,8 @@ const schema = new Schema({
   street: { type: String, required: true },
   numberHouse: { type: String, required: true },
   phone: { type: String, required: true },
+  creator: { type: String, required: true },
+  visitors: { type: Array, required: true },
 })
 
 module.exports = model('Post', schema)

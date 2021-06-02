@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 import ReactDOM from 'react-dom'
 import { w3cwebsocket as W3CWebSocket } from 'websocket'
-import 'antd/dist/antd.css'
 import { Card, Input, Avatar, Typography } from 'antd'
 const { Text } = Typography
 const { Meta } = Card
@@ -53,7 +52,10 @@ export class MessangerTab extends Component {
       <>
         {this.props.name != null ? (
           <div>
-            <button onClick={() => this.onButtonClicked('Hello')}>
+            <button
+              data-testid="buttonHello"
+              onClick={() => this.onButtonClicked('Hello')}
+            >
               Send Hello
             </button>
             <div

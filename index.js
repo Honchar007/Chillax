@@ -59,7 +59,6 @@ async function start() {
         useFindAndModify: true,
       }
     )
-
     app.listen(PORT, () => {
       console.log('listen ' + PORT)
     })
@@ -69,3 +68,4 @@ async function start() {
 }
 
 start()
+module.exports = app // для тестирования

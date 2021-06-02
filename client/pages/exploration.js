@@ -4,8 +4,8 @@ import Navbar from '../components/Navbar/Navbar'
 const Explore = () => (
   <>
     <Navbar />
-    <div className="explore">
-      <h1>Explore</h1>
+    <div data-testid="divTest" className="explore">
+      <h1 data-testid="h1Test">Explore</h1>
     </div>
   </>
 )

@@ -35,7 +35,7 @@ const Parties = ({ posts }) => {
   return (
     <>
       <Navbar />
-      <PartyWrapper>
+      <PartyWrapper data-testid="divWrapper">
         <Grid
           container
           style={{ justifyContent: 'center', marginTop: 10 }}

@@ -210,6 +210,9 @@ const FillProfile = ({ session }) => {
   if (session.user.email != '' && email == '') {
     setEmail(session.user.email)
   }
+  if (session.user.image != '' && photo == '') {
+    setPhoto(session.user.image)
+  }
   const addPost = async () => {
     try {
       await axios
@@ -237,9 +240,6 @@ const FillProfile = ({ session }) => {
         <FormWrapper>
           <Form onSubmit={(e) => e.preventDefault()}>
             <InputField>
-              {console.log(session)}
-              {console.log(github)}
-
               <InputWrapper>
                 <InputStyled
                   onChange={(e) => {
@@ -294,18 +294,20 @@ const FillProfile = ({ session }) => {
                 </InputWrapper>
               )}
 
-              <InputWrapper>
-                <InputStyled
-                  onChange={(e) => {
-                    setPhoto(e.target.value)
-                  }}
-                  type="text"
-                  required
-                ></InputStyled>
-                <Highlight></Highlight>
-                <Bar></Bar>
-                <LabelStyled> Url Photo </LabelStyled>
-              </InputWrapper>
+              {session.user.image == '' && (
+                <InputWrapper>
+                  <InputStyled
+                    onChange={(e) => {
+                      setPhoto(e.target.value)
+                    }}
+                    type="text"
+                    required
+                  ></InputStyled>
+                  <Highlight></Highlight>
+                  <Bar></Bar>
+                  <LabelStyled> Url Photo </LabelStyled>
+                </InputWrapper>
+              )}
             </InputField>
             <InputWrapper>
               <InputStyled

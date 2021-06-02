@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
@@ -8,6 +8,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Avatar from '@material-ui/core/Avatar'
 import AvatarGroup from '@material-ui/lab/AvatarGroup'
+import { signIn, signOut, useSession, getSession } from 'next-auth/client'
+import ForLoggedMembers from '../../components/ForLoggedMembers'
 
 const FormBtn = styled.button`
   border: 2px solid;
@@ -59,7 +61,10 @@ const TypographyName = styled(Typography)`
   margin-bottom: 10px;
 `
 
-function Post({ post }) {
+const Post = ({ post }) => {
+  const id = post._id
+  const [theArray, setTheArray] = useState(post.visitors)
+
   return (
     <>
       <Navbar />
@@ -75,31 +80,23 @@ function Post({ post }) {
           </Grid>
           <Grid item xs={4} sm={5} lg={5} xl={5}>
             <div>{post.text}</div>
+            <Link
+              href={`/profile/[nickname]`}
+              as={`/profile/${post.creator}`}
+              passHref
+            >
+              <FormBtn color="inherit">Owner : {post.creator}</FormBtn>
+            </Link>
+            <ForLoggedMembers
+              theArray={theArray}
+              setTheArray={setTheArray}
+              id={id}
+            ></ForLoggedMembers>
 
-            <FormBtn color="inherit" href="/profile" passHref>
-              Owner : {post.creator}
-            </FormBtn>
             <Visitors max={4}>
-              <Avatar
-                alt="Remy Sharp"
-                src="https://cdn1.vectorstock.com/i/1000x1000/31/95/user-sign-icon-person-symbol-human-avatar-vector-12693195.jpg"
-              />
-              <Avatar
-                alt="Travis Howard"
-                src="https://cdn1.vectorstock.com/i/1000x1000/31/95/user-sign-icon-person-symbol-human-avatar-vector-12693195.jpg"
-              />
-              <Avatar
-                alt="Cindy Baker"
-                src="https://cdn1.vectorstock.com/i/1000x1000/31/95/user-sign-icon-person-symbol-human-avatar-vector-12693195.jpg"
-              />
-              <Avatar
-                alt="Agnes Walker"
-                src="https://cdn1.vectorstock.com/i/1000x1000/31/95/user-sign-icon-person-symbol-human-avatar-vector-12693195.jpg"
-              />
-              <Avatar
-                alt="Trevor Henderson"
-                src="https://cdn1.vectorstock.com/i/1000x1000/31/95/user-sign-icon-person-symbol-human-avatar-vector-12693195.jpg"
-              />
+              {post.visitors.map((visitor, idx) => {
+                return <Avatar alt={visitor.name} src={visitor.img} />
+              })}
             </Visitors>
           </Grid>
         </Grid>
@@ -111,7 +108,6 @@ function Post({ post }) {
 export default Post
 
 export async function getServerSideProps(context) {
-  console.log(context)
   const res = await fetch(`http://localhost:5000/api/post/${context.query.id}`)
   const post = await res.json()
 

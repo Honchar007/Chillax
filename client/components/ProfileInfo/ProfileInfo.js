@@ -3,6 +3,7 @@ import { Typography } from '@material-ui/core'
 import { useSession, getSession } from 'next-auth/client'
 import styled from 'styled-components'
 import CustomTimeLine from '../CustomTimeLine'
+import Link from 'next/link'
 
 const Wrapper = styled.div`
   margin-top: 20px;
@@ -76,28 +77,34 @@ export class ProfileInfo extends Component {
     if (this.state?.session.user != null) img = this.state?.session.user.image
     return (
       <Wrapper>
-        <div>
-          <ProfileName className="profile_name">
-            <TypographyName className="name">
-              {this.props.userInfo[0].nickName}
-            </TypographyName>
-            <TypographyTitle className="title">
-              {this.props.userInfo[0].github}
-            </TypographyTitle>
-          </ProfileName>
-
-          <ProfileImage className="profile_image">
-            <img src={this.props.userInfo[0].photo} alt="" />
-          </ProfileImage>
-        </div>
-        <CustomTimeLine
-          github={this.props.userInfo[0].github}
-          instagram={this.props.userInfo[0].instagram}
-          telegram={this.props.userInfo[0].telegram}
-        ></CustomTimeLine>
-        <FormBtn>Send Message</FormBtn>
-
-        <Split></Split>
+        {this.state?.session.user != null && (
+          <div>
+            <div>
+              <ProfileName className="profile_name">
+                <TypographyName className="name">
+                  {this.props.userInfo[0].nickName}
+                </TypographyName>
+                <TypographyTitle className="title">
+                  {this.props.userInfo[0].github}
+                </TypographyTitle>
+              </ProfileName>
+              <ProfileImage className="profile_image">
+                <img src={this.props.userInfo[0].photo} alt="" />
+              </ProfileImage>
+            </div>
+            <CustomTimeLine
+              github={this.props.userInfo[0].github}
+              instagram={this.props.userInfo[0].instagram}
+              telegram={this.props.userInfo[0].telegram}
+            ></CustomTimeLine>
+            <Split></Split>
+            {this.state?.session.user.name == this.props.userInfo[0].github && (
+              <Link href={`/createParty`} passHref>
+                <FormBtn color="inherit">Create Party</FormBtn>
+              </Link>
+            )}
+          </div>
+        )}
       </Wrapper>
     )
   }

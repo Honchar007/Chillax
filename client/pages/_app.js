@@ -8,6 +8,7 @@ import '../components/styles/Home.css'
 import '../components/styles/login.css'
 import '../components/styles/registration.css'
 import '../components/styles/createParty.css'
+import 'antd/dist/antd.css'
 import { Provider } from 'next-auth/client'
 
 function MyApp({ Component, pageProps }) {

@@ -46,6 +46,25 @@ router.post('/add', async (req, res) => {
   }
 })
 
+router.patch('/attend/:id', async (req, res) => {
+  try {
+    const { id } = req.params
+    const { visitors } = req.body
+    console.log(id)
+    console.log(visitors)
+    const newVisitor = await Post.findByIdAndUpdate(
+      id,
+      { visitors: visitors, street: '000' },
+      {
+        new: true,
+      }
+    )
+    res.send(newVisitor)
+  } catch (error) {
+    console.log(error)
+  }
+})
+
 router.get('/', async (req, res) => {
   try {
     const posts = await Post.find()
