@@ -25,9 +25,12 @@ class Index extends React.Component {
         </Head>
         <Navbar />
         <div data-testid="divTest" className="main">
-          {this.state?.session != null && (
-            <div>You are logged in! Hello, {this.state?.session.user.name}</div>
-          )}
+          {this.state?.session != null &&
+            this.state?.session.hasOwnProperty('user') && (
+              <div>
+                You are logged in! Hello, {this.state?.session.user.name}
+              </div>
+            )}
           {this.state?.session == null && <div>You are not logged in</div>}
           <h1 data-testid="h1Test">Home</h1>
           <img

@@ -65,21 +65,23 @@ class Navbar extends React.Component {
               Patries
             </NavLink>
           </Link>
-          <Link
-            href={`/profile/[nickname]`}
-            as={`/profile/${this.state?.session.user.name}`}
-            passHref
-          >
-            <NavLink
-              activeStyle={{
-                borderBottom: 'solid 3px #fff',
-                paddingBottom: '1em',
-              }}
-              exact
+          {this.state?.session != null && (
+            <Link
+              href={`/profile/[nickname]`}
+              as={`/profile/${this.state?.session.user.name}`}
+              passHref
             >
-              Profile
-            </NavLink>
-          </Link>
+              <NavLink
+                activeStyle={{
+                  borderBottom: 'solid 3px #fff',
+                  paddingBottom: '1em',
+                }}
+                exact
+              >
+                Profile
+              </NavLink>
+            </Link>
+          )}
         </NavMenu>
         {!this.state?.session && (
           <NavBtn onClick={signIn}>
@@ -97,3 +99,5 @@ class Navbar extends React.Component {
 }
 /**href="/login" */
 export default Navbar
+
+/* */
