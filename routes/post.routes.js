@@ -3,6 +3,17 @@ const router = Router()
 const Post = require('../models/Post')
 const User = require('../models/Users')
 
+router.delete('/books/:id', async (req, res) => {
+  try {
+    const post = await Post.findById(req.params.id)
+    await post.remove()
+    res.send({ data: true })
+    res.redirect('/')
+  } catch (error) {
+    console.log(error)
+  }
+})
+
 router.post('/useradd', async (req, res) => {
   try {
     const { nickName, email, instagram, github, telegram, photo, normalLevel } =
@@ -26,8 +37,18 @@ router.post('/useradd', async (req, res) => {
 
 router.post('/add', async (req, res) => {
   try {
-    const { title, city, text, imgUrl, bees, street, numberHouse, phone } =
-      req.body
+    const {
+      title,
+      city,
+      text,
+      imgUrl,
+      bees,
+      street,
+      numberHouse,
+      phone,
+      creator,
+      visitors,
+    } = req.body
     const post = new Post({
       title,
       city,
@@ -37,6 +58,8 @@ router.post('/add', async (req, res) => {
       street,
       numberHouse,
       phone,
+      creator,
+      visitors,
     })
     await post.save()
     res.json(post)

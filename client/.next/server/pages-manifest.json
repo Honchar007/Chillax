@@ -2,5 +2,6 @@
   "/_app": "pages/_app.js",
   "/_document": "pages/_document.js",
   "/_error": "pages/_error.js",
-  "/createParty": "pages/createParty.js"
+  "/party/[id]": "pages/party/[id].js",
+  "/parties": "pages/parties.js"
 }

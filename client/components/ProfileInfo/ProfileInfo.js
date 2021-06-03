@@ -48,7 +48,7 @@ const FormBtn = styled.button`
   cursor: pointer;
   box-shadow: 0 0 5px #902e99, 0 0 25px #902e99;
   &:hover {
-    background: #a200ff;
+    background: #4e0166;
   }
 `
 const TypographyTitle = styled(Typography)`

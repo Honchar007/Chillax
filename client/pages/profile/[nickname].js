@@ -1,10 +1,11 @@
 import React from 'react'
 import Navbar from '../../components/Navbar/Navbar'
 import { Container, Grid, Avatar, Typography } from '@material-ui/core'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import ProfileInfo from '../../components/ProfileInfo/ProfileInfo'
 import PartyMaker from '../../components/PartyMaker'
 import Link from 'next/link'
+import Head from 'next/head'
 
 const StyledLink = styled.a`
   color: #fff;

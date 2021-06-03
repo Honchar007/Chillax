@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import axios from 'axios'
 import useRouter from 'next/router'
 import Checkbox from '@material-ui/core/Checkbox'
-import PhoneInput from 'react-phone-number-input'
+import { getSession } from 'next-auth/client'
 const Wrapper = styled.div`
   margin-top: 20px;
   background: #140c13;
@@ -186,7 +186,7 @@ const Highlight = styled.span`
     animation: inputHighlighter 0.3s ease;
   }
 `
-const CreateParty = () => {
+const CreateParty = ({ user }) => {
   const [title, setTitle] = useState('')
   const [text, setText] = React.useState('')
   const [imgUrl, setImgUrl] = React.useState('')
@@ -196,7 +196,8 @@ const CreateParty = () => {
   const [street, setStreet] = React.useState('')
   const [numberHouse, setNumberHouse] = React.useState('')
   const [phone, setPhone] = React.useState('')
-
+  const creator = user.name
+  const visitors = [{ name: user.name, img: user.image }]
   const router = useRouter
 
   const addPost = async () => {
@@ -211,6 +212,8 @@ const CreateParty = () => {
           street,
           numberHouse,
           phone,
+          creator,
+          visitors,
         })
         .then(() => router.push('/'))
     } catch (error) {
@@ -322,3 +325,18 @@ const CreateParty = () => {
   )
 }
 export default CreateParty
+
+export async function getServerSideProps(ctx) {
+  const session = await getSession(ctx)
+  if (!session) {
+    ctx.res.writeHead(302, { Location: '/' })
+    ctx.res.end()
+    return {}
+  }
+
+  return {
+    props: {
+      user: session.user,
+    },
+  }
+}

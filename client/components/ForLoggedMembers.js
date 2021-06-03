@@ -20,7 +20,7 @@ const FormBtn = styled.button`
   cursor: pointer;
   box-shadow: 0 0 5px #902e99, 0 0 25px #902e99;
   &:hover {
-    background: #a200ff;
+    background: #4e0166;
   }
 `
 
@@ -33,7 +33,6 @@ export class ForLoggedMembers extends Component {
   render() {
     return (
       <div>
-        {console.log(this.props.theArray)}
         {this.state?.session &&
           !consistObject(
             this.props.theArray,

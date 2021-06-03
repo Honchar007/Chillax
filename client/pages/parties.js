@@ -67,14 +67,7 @@ const Parties = ({ posts }) => {
                         </Typography>
                       </CardContent>
                     </CardActionArea>
-                    <CardActions>
-                      <Button size="small" color="primary">
-                        Share
-                      </Button>
-                      <Button size="small" color="primary">
-                        Learn More
-                      </Button>
-                    </CardActions>
+                    <CardActions></CardActions>
                   </CardPart>
                 </Link>
               </Grid>

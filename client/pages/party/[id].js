@@ -6,6 +6,7 @@ import Box from '@material-ui/core/Box'
 import Navbar from '../../components/Navbar/Navbar'
 import Image from 'next/image'
 import Link from 'next/link'
+import { deleteParty } from '../../components/Utilutil'
 import Avatar from '@material-ui/core/Avatar'
 import AvatarGroup from '@material-ui/lab/AvatarGroup'
 import { signIn, signOut, useSession, getSession } from 'next-auth/client'
@@ -28,10 +29,9 @@ const FormBtn = styled.button`
   cursor: pointer;
   box-shadow: 0 0 5px #902e99, 0 0 25px #902e99;
   &:hover {
-    background: #a200ff;
+    background: #4e0166;
   }
 `
-
 const Wrapper = styled.div`
   background: white;
   border-radius: 6px;
@@ -61,7 +61,7 @@ const TypographyName = styled(Typography)`
   margin-bottom: 10px;
 `
 
-const Post = ({ post }) => {
+const Post = ({ post, user }) => {
   const id = post._id
   const [theArray, setTheArray] = useState(post.visitors)
 
@@ -87,15 +87,25 @@ const Post = ({ post }) => {
             >
               <FormBtn color="inherit">Owner : {post.creator}</FormBtn>
             </Link>
+
             <ForLoggedMembers
               theArray={theArray}
               setTheArray={setTheArray}
               id={id}
             ></ForLoggedMembers>
-
+            {post.creator == user.name && (
+              <FormBtn
+                onClick={() => {
+                  deleteParty(id)
+                }}
+                color="inherit"
+              >
+                Delete this Party
+              </FormBtn>
+            )}
             <Visitors max={4}>
               {post.visitors.map((visitor, idx) => {
-                return <Avatar alt={visitor.name} src={visitor.img} />
+                return <Avatar key={idx} alt={visitor.name} src={visitor.img} />
               })}
             </Visitors>
           </Grid>
@@ -110,7 +120,10 @@ export default Post
 export async function getServerSideProps(context) {
   const res = await fetch(`http://localhost:5000/api/post/${context.query.id}`)
   const post = await res.json()
-
+  const session = await getSession(context)
+  if (!session) {
+    return { notFound: true }
+  }
   if (!post) {
     return {
       notFound: true,
@@ -118,6 +131,6 @@ export async function getServerSideProps(context) {
   }
 
   return {
-    props: { post },
+    props: { post, user: session.user },
   }
 }
