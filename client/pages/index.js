@@ -28,7 +28,7 @@ class Index extends React.Component {
           {this.state?.session != null && (
             <div>You are logged in! Hello, {this.state?.session.user.name}</div>
           )}
-          {!this.state?.session == null && <div>You are not logged in</div>}
+          {this.state?.session == null && <div>You are not logged in</div>}
           <h1 data-testid="h1Test">Home</h1>
           <img
             data-testid="custom-element"
