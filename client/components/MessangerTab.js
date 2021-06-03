@@ -31,7 +31,6 @@ export class MessangerTab extends Component {
     }
     client.onmessage = (message) => {
       const dataFromServer = JSON.parse(message.data)
-      console.log('got reply', dataFromServer)
       if (dataFromServer.type == 'message') {
         this.setState((state) => ({
           messages: [
@@ -68,7 +67,7 @@ export class MessangerTab extends Component {
             >
               {this.state.messages.map((message) => (
                 <Card
-                  key={message.msg}
+                  key={message.msg + new Date.now()}
                   style={{
                     width: 300,
                     margin: '16px 4px 0 4px',
