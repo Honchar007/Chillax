@@ -23,12 +23,21 @@ describe('Parties', () => {
           done()
         })
     })
-    it('it should Post all the party', (done) => {
+    it('it should update the party', (done) => {
       chai
         .request(server)
-        .post('/')
+        .patch('/attend/:id')
+        .send({
+          post: {
+            id: '60ae80fc218c5fac5bcf47fe',
+            street: 'Centralna',
+          },
+        })
         .end((err, res) => {
-          res.should.have.status(200)
+          expect(err).to.be.null
+          expect(res).to.have.status(200)
+          expect(res.body).to.haveOwnProperty('message')
+
           done()
         })
     })
@@ -86,6 +95,19 @@ describe('/POST party', () => {
       .end((err, res) => {
         res.should.have.status(200)
         res.body.should.be.a('object')
+        done()
+      })
+  })
+  it('it should DELETE a party', (done) => {
+    chai
+      .request(server)
+      .delete('/party/:id')
+      .query({ id: '60ae80fc218c5fac5bcf47fe' })
+      .end((err, res) => {
+        res.should.have.status(200)
+        res.body.should.be.a('object')
+        expect(err).to.be.null
+        expect(res).to.have.status(200)
         done()
       })
   })

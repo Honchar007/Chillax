@@ -3,7 +3,7 @@ const router = Router()
 const Post = require('../models/Post')
 const User = require('../models/Users')
 
-router.delete('/books/:id', async (req, res) => {
+router.delete('/party/:id', async (req, res) => {
   try {
     const post = await Post.findById(req.params.id)
     await post.remove()

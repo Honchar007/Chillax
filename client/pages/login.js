@@ -35,7 +35,7 @@ const Signin = () => {
             value="Log in"
             placeholder=""
             name=""
-            onClick={signIn}
+            onClick={console.log('hello')}
             id="logBtn"
           />
           <Link href="/registration" passHref>

@@ -27,7 +27,7 @@ export async function missParty(image, name, id, theArray) {
 export async function deleteParty(id) {
   try {
     await axios
-      .delete(`http://localhost:5000/api/post/books/${id}`)
+      .delete(`http://localhost:5000/api/post/party/${id}`)
       .then(() => router.push('/'))
   } catch (error) {
     console.log(error)
