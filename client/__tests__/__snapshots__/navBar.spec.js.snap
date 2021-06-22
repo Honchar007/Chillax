@@ -2,10 +2,10 @@
 
 exports[`renders correctly 1`] = `
 <nav
-  className="NavbarElements__Nav-a01551-0 lkDVfj"
+  className="NavbarElements__Nav-a01551-0 clQdYN"
 >
   <a
-    className="NavbarElements__NavLink-a01551-1 gpZxDE"
+    className="NavbarElements__NavLink-a01551-1 kbLYqq"
     href="/home"
     onClick={[Function]}
     onMouseEnter={[Function]}
@@ -17,7 +17,7 @@ exports[`renders correctly 1`] = `
     />
   </a>
   <svg
-    className="NavbarElements__Bars-a01551-2 iTVcVw"
+    className="NavbarElements__Bars-a01551-2 eOQQfC"
     fill="currentColor"
     height="1em"
     stroke="currentColor"
@@ -36,10 +36,10 @@ exports[`renders correctly 1`] = `
     />
   </svg>
   <div
-    className="NavbarElements__NavMenu-a01551-3 ikoczi"
+    className="NavbarElements__NavMenu-a01551-3 jRqXJs"
   >
     <a
-      className="NavbarElements__NavLink-a01551-1 gpZxDE"
+      className="NavbarElements__NavLink-a01551-1 kbLYqq"
       href="/exploration"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -47,7 +47,7 @@ exports[`renders correctly 1`] = `
       Explore
     </a>
     <a
-      className="NavbarElements__NavLink-a01551-1 gpZxDE"
+      className="NavbarElements__NavLink-a01551-1 kbLYqq"
       href="/messanger"
       onClick={[Function]}
       onMouseEnter={[Function]}
@@ -55,28 +55,20 @@ exports[`renders correctly 1`] = `
       Messanger
     </a>
     <a
-      className="NavbarElements__NavLink-a01551-1 gpZxDE"
+      className="NavbarElements__NavLink-a01551-1 kbLYqq"
       href="/parties"
       onClick={[Function]}
       onMouseEnter={[Function]}
     >
       Patries
     </a>
-    <a
-      className="NavbarElements__NavLink-a01551-1 gpZxDE"
-      href="/profile/undefined"
-      onClick={[Function]}
-      onMouseEnter={[Function]}
-    >
-      Profile
-    </a>
   </div>
   <nav
-    className="NavbarElements__NavBtn-a01551-4 lnVSXP"
+    className="NavbarElements__NavBtn-a01551-4 jREmHR"
     onClick={[Function]}
   >
     <a
-      className="NavbarElements__NavBtnLink-a01551-5 cTIYEl"
+      className="NavbarElements__NavBtnLink-a01551-5 ehwJar"
     >
       Sign in
     </a>
