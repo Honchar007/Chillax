@@ -3,10 +3,12 @@ import styled from 'styled-components'
 import ReactDOM from 'react-dom'
 import { w3cwebsocket as W3CWebSocket } from 'websocket'
 import { Card, Input, Avatar, Typography } from 'antd'
+import { checkMessage, sendMessage, client } from '../services/ApiServiceWbt'
+
 const { Text } = Typography
 const { Meta } = Card
 const { Search } = Input
-const client = new W3CWebSocket('ws://127.0.0.1:8000')
+
 export class MessangerTab extends Component {
   state = {
     userName: '',
@@ -15,20 +17,10 @@ export class MessangerTab extends Component {
   }
 
   onButtonClicked = (value) => {
-    client.send(
-      JSON.stringify({
-        type: 'message',
-        msg: value,
-        user: this.state.userName,
-        img: this.state.img,
-      })
-    )
+    sendMessage(this.state.userName, this.state.img, value)
     this.setState({ searchVal: '' })
   }
   componentDidMount() {
-    client.onopen = () => {
-      console.log('WebSocket Client Connected')
-    }
     client.onmessage = (message) => {
       const dataFromServer = JSON.parse(message.data)
       if (dataFromServer.type == 'message') {
@@ -67,7 +59,7 @@ export class MessangerTab extends Component {
             >
               {this.state.messages.map((message) => (
                 <Card
-                  key={message.msg + new Date.now()}
+                  key={message.msg + Date.now()}
                   style={{
                     width: 300,
                     margin: '16px 4px 0 4px',

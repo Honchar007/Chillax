@@ -10,7 +10,6 @@ import '../components/styles/registration.css'
 import '../components/styles/createParty.css'
 import 'antd/dist/antd.css'
 import { Provider } from 'next-auth/client'
-
 function MyApp({ Component, pageProps }) {
   return (
     <Component {...pageProps}>
